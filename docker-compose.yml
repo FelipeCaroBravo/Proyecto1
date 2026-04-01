@@ -18,7 +18,7 @@ services:
     networks:
       - app-network
 
-  Test1:
+  test1:
     build:
       context: ./Test1
       dockerfile: Dockerfile
@@ -34,7 +34,7 @@ services:
     networks:
       - app-network
 
-  Test2Frontend:
+  test2Frontend:
     build:
       context: ./Test2Frontend
       dockerfile: Dockerfile
