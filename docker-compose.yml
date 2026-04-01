@@ -36,7 +36,7 @@ services:
 
   test2frontend:
     build:
-      context: ./Test2Frontend
+      context: ./Test2/Test2Frontend
       dockerfile: Dockerfile
     container_name: spring-app-2
     ports:
