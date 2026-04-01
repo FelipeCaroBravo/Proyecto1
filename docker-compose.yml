@@ -34,7 +34,7 @@ services:
     networks:
       - app-network
 
-  test2Frontend:
+  test2frontend:
     build:
       context: ./Test2Frontend
       dockerfile: Dockerfile
