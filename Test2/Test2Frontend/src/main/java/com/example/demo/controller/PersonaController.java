@@ -42,6 +42,19 @@ public class PersonaController {
         return "redirect:/crud/persona/";
     }
 
+    @GetMapping("/edit/{id}")
+    public String editarPersona(@PathVariable long id, Model model) {
+        PersonaEntity persona = service.findById(id);
+        model.addAttribute("persona", persona);
+        return "editar";
+    }
+
+    @PostMapping("/update")
+    public String actualizarPersona(@ModelAttribute PersonaEntity persona) {
+        service.update(persona.getId(), persona);
+        return "redirect:/crud/persona/";
+    }
+
     @GetMapping("/del/{id}")
     public String deleteById(@PathVariable long id) {
         service.deleteById(id);
