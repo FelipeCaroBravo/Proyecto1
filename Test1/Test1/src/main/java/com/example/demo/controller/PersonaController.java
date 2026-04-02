@@ -50,4 +50,20 @@ public class PersonaController {
             return ResponseEntity.status(404).body(e);
         }
     }
+    @PutMapping("/{id}")
+    public ResponseEntity<?> updatePersona(@PathVariable Long id, @RequestBody PersonaEntity persona) {
+        try {
+            PersonaEntity personaActual = repository.findById(id).orElse(null);
+    
+            if (personaActual == null) {
+                return ResponseEntity.notFound().build();
+            }
+    
+            personaActual.setNombre(persona.getNombre());
+    
+            return ResponseEntity.ok(repository.save(personaActual));
+        } catch (Exception e) {
+            return ResponseEntity.status(400).body(e);
+        }
+    }
 }
