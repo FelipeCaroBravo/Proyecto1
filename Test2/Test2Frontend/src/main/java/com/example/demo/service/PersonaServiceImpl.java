@@ -3,6 +3,9 @@ package com.example.demo.service;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -29,6 +32,18 @@ public class PersonaServiceImpl implements IPersonaService {
     @Override
     public PersonaEntity save(PersonaEntity persona) {
         return restTemplate.postForObject(URL + "/", persona, PersonaEntity.class);
+    }
+
+    @Override
+    public PersonaEntity update(long id, PersonaEntity persona) {
+        HttpEntity<PersonaEntity> requestEntity = new HttpEntity<>(persona);
+        ResponseEntity<PersonaEntity> response = restTemplate.exchange(
+                URL + "/" + id,
+                HttpMethod.PUT,
+                requestEntity,
+                PersonaEntity.class
+        );
+        return response.getBody();
     }
 
     @Override
