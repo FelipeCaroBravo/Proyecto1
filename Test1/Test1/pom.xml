@@ -30,7 +30,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
 
 <lombok.version>1.18.24</lombok.version>
 
-<start-class>com.example.demo.Test1</start-class>
+<start-class>com.example.demo.Test1Application</start-class>
 
 </properties>
 
@@ -130,7 +130,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
 
 <configuration>
 
-<mainClass>com.example.demo.Test1</mainClass>
+<mainClass>com.example.demo.Test1Application</mainClass>
 <layout>JAR</layout>
 
 <excludes>
