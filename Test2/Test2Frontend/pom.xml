@@ -17,7 +17,7 @@
         <java.version>17</java.version>
         <maven.compiler.release>17</maven.compiler.release>
         <lombok.version>1.18.24</lombok.version>
-        <start-class>com.example.demo.Test2Application</start-class>
+        <start-class>com.example.demo.Test2FrontendApplication</start-class>
     </properties>
 
     <dependencyManagement>
@@ -63,7 +63,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.example.demo.Test2Application</mainClass>
+                    <mainClass>com.example.demo.Test2FrontendApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
